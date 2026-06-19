@@ -552,7 +552,7 @@ class QuizActivity : AppCompatActivity() {
             binding.variant4Tv.text = question.variant4
             binding.variant4Tv.setBackgroundResource(R.drawable.variant_bcg)
             binding.variant4Tv.setTextColor(Color.parseColor("#462B20"))
-// t t f s t s f f t t
+
             if (question.selectedVariant == question.correctVariantIndex) {
                 binding.skippedTv.visibility = View.GONE
                 if (question.correctVariantIndex == 0) {

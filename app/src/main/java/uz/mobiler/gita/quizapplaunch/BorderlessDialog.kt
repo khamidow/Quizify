@@ -23,17 +23,15 @@ class BorderlessDialog(private val dialogResultListener: DialogResultListener) :
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate your custom layout here
         return inflater.inflate(R.layout.dialog_user_name, container, false)
     }
 
     override fun onStart() {
         super.onStart()
         dialog?.window?.setLayout(
-            355.dpToPx(this), // Optional: make it full width
-            271.dpToPx(this)  // Optional: wrap content height
+            355.dpToPx(this),
+            271.dpToPx(this)
         )
-        // **Crucial step**: Make the dialog background transparent to remove borders/margins
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
@@ -57,7 +55,6 @@ class BorderlessDialog(private val dialogResultListener: DialogResultListener) :
         }
     }
 
-    // Optional: Hide the title feature if it's present by default
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
         dialog.window?.requestFeature(Window.FEATURE_NO_TITLE)
@@ -66,7 +63,7 @@ class BorderlessDialog(private val dialogResultListener: DialogResultListener) :
 
     fun Number.dpToPx(context: BorderlessDialog): Int {
         return TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP, // Use COMPLEX_UNIT_DIP for dp
+            TypedValue.COMPLEX_UNIT_DIP,
             this.toFloat(),
             context.resources.displayMetrics
         ).toInt()
