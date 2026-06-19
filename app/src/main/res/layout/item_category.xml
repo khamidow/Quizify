@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="191dp"
+    android:id="@+id/item_itself"
+    android:layout_margin="9dp"
+    android:foreground="?android:selectableItemBackgroundBorderless"
+    android:background="@drawable/question_bcg"
+    android:clipToOutline="true"
+    android:elevation="5dp">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="79dp"
+        android:layout_height="79dp"
+        android:layout_margin="15dp"
+        android:src="@drawable/math_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/questions_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="13dp"
+        android:text="15 questions"
+        android:textColor="#462B20"
+        android:textSize="16.5sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/category_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo_bahaijaan2"
+        android:layout_marginBottom="-6.5dp"
+        android:text="Mathematics"
+        android:textColor="#462B20"
+        android:textSize="21.9sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/questions_count_tv"
+        app:layout_constraintRight_toRightOf="@id/questions_count_tv" />
+</androidx.constraintlayout.widget.ConstraintLayout>
